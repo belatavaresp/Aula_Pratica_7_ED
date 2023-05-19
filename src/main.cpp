@@ -41,11 +41,11 @@ int main()
             heapSort(vec, n);
             end = clock();
             heapSortTime = double(end - start) / CLOCKS_PER_SEC;
-            // heapSortTime = heapSortTime / 1000000000;
+            heapSortTime = heapSortTime * 1000000;
 
             cout << endl << "VETOR APÓS HEAPSORT: ";
             printvec(vec, n);
-            cout << endl <<  "TEMPO DE EXECUÇÃO (HEAPSORT): " << heapSortTime << " S" << endl;
+            cout << endl <<  "TEMPO DE EXECUÇÃO (HEAPSORT): " << heapSortTime << " MICROSSEGUNDOS" << endl;
 
             memcpy(vecAux, vec, n * sizeof(int)); // Copy elements from vec to vecAux
 
@@ -54,11 +54,11 @@ int main()
             shellSort(vecAux, n);
             end = clock();
             shellSortTime = double(end - start) / CLOCKS_PER_SEC;
-            // shellSortTime = shellSortTime / 1000000000;
+            shellSortTime = shellSortTime * 1000000;
 
             cout << "VETOR APÓS SHELLSORT: ";
             printvec(vecAux, n);
-            cout << endl << "TEMPO DE EXECUÇÃO (SHELLSORT): " << shellSortTime << " S" << endl;
+            cout << endl << "TEMPO DE EXECUÇÃO (SHELLSORT): " << shellSortTime << " MICROSSEGUNDOS" << endl;
 
             // Free the allocated memory
             free(vec);
